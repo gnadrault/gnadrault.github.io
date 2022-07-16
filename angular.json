@@ -21,9 +21,9 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
-              "node_modules/@gnadrault/nexus-ui/dist/main.css"
+              "node_modules/@gnadrault/nexus-ui/dist/index.css"
             ],
-            "scripts": ["node_modules/@gnadrault/nexus-ui/dist/index.js"]
+            "scripts": []
           },
           "configurations": {
             "production": {
