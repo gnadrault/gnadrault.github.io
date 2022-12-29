@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
 
   switchTheme() {
     console.log('Switch theme');
-    const root: HTMLElement | null = document.querySelector('html');
-    switchTheme(root);
+    switchTheme();
   }
 }

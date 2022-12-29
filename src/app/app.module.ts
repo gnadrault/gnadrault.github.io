@@ -9,6 +9,8 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { PopupComponent } from './core/popup/popup.component';
+import { AboutComponent } from './pages/about/about.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,12 @@ import { PopupComponent } from './core/popup/popup.component';
     ProjectsComponent,
     HeaderComponent,
     FooterComponent,
-    PopupComponent
+    PopupComponent,
+    AboutComponent,
+    CardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
