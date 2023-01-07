@@ -45,12 +45,7 @@
 </section>
 
 <div class="cards">
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
+  <ng-container *ngFor="let project of projects">
+    <app-card [project]="project"></app-card>
+  </ng-container>
 </div>
