@@ -25,6 +25,16 @@ export class AppComponent implements OnInit {
         }
       },
     });
+
+    this.modalService.openMenuModalEvent.subscribe({
+      next: (open) => {
+        if (open) {
+          openDialog(this.dialogMenu?.nativeElement);
+        } else {
+          closeDialog(this.dialogMenu?.nativeElement);
+        }
+      },
+    });
   }
 
   closeCardDialog() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { switchTheme } from '@gnadrault/nexus-ui';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,18 @@ import { switchTheme } from '@gnadrault/nexus-ui';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  isMenuOpen: boolean = false;
+
+  constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {}
 
   switchTheme() {
-    console.log('Switch theme');
     switchTheme();
+  }
+
+  openMenu() {
+    this.modalService.openMenuModalEvent.next(!this.isMenuOpen);
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

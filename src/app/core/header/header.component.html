@@ -122,7 +122,11 @@
       </button>
 
       <!-- BURGER MENU -->
-      <div id="burger-menu">
+      <div
+        id="burger-menu"
+        (click)="openMenu()"
+        [ngClass]="{ 'menu-open': isMenuOpen }"
+      >
         <span></span>
         <span></span>
         <span></span>
