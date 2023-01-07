@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class ModalService {
   openCardModalEvent: Subject<boolean> = new Subject<boolean>();
+  openMenuModalEvent: Subject<boolean> = new Subject<boolean>();
 
   constructor() {}
 }
