@@ -1,11 +1,5 @@
 <div class="card card-hover card-open" (click)="openDialog()">
   <h3>{{ project?.titre }}</h3>
   <p>{{ project?.date }}</p>
-  <iframe
-    *ngIf="project?.mainResource?.isVideo"
-    [src]="videoUrl()"
-    frameborder="0"
-    allowfullscreen
-  ></iframe>
   <p>Gaminglab project with JavaScript, TypeScript, NodeJS during formation</p>
 </div>
