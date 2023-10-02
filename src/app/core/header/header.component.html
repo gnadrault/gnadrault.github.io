@@ -1,6 +1,6 @@
 <header>
   <div class="container h-100">
-    <a class="nav-logo">
+    <a class="nav-logo" [routerLink]="['/home']" routerLinkActive="active">
       <!-- LOGO -->
       <svg
         id="logo"
@@ -29,16 +29,15 @@
       <div id="nav-links-lg">
         <ul>
           <li>
-            <a class="nav-link-lg link" href="#">Home</a>
+            <a class="nav-link-lg link" [routerLink]="['/home']">Home</a>
           </li>
           <li>
-            <a class="nav-link-lg link" href="#">Projects</a>
+            <a class="nav-link-lg link" [routerLink]="['/projects']"
+              >Projects</a
+            >
           </li>
           <li>
-            <a class="nav-link-lg link" href="#">About</a>
-          </li>
-          <li>
-            <a class="nav-link-lg link" href="#">Contact</a>
+            <a class="nav-link-lg link" [routerLink]="['/contact']">Contact</a>
           </li>
         </ul>
       </div>

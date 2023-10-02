@@ -1,0 +1,49 @@
+:root {
+  --nexus-height-card-sm: 150px;
+  --nexus-height-card-md: 200px;
+  --nexus-height-card-lg: 250px;
+}
+
+// Cards
+.cards {
+  display: grid;
+  grid-gap: 2rem;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+  .popup-open & {
+    transform: scale(0.95);
+  }
+
+  @media screen and (min-width: 1025px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Card
+.card {
+  display: flex;
+  padding: 1.5rem;
+  min-height: 150px;
+  font-size: var(--nexus-font-size-md);
+  background-color: var(--nexus-color-bg-card);
+  box-shadow: var(--nexus-shadows-card-lg);
+  border-radius: var(--nexus-radius-card-lg);
+  p {
+    align-self: flex-end;
+  }
+}
+
+.card.card-hover {
+  cursor: pointer;
+  &:hover {
+    outline: 3px solid var(--nexus-color-outline-card);
+  }
+  transition: 0.3s transform ease-out;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.03);
+  }
+}

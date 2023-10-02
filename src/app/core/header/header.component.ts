@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { switchTheme } from '@gnadrault/nexus-ui';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +13,9 @@ export class HeaderComponent implements OnInit {
   switchTheme() {
     console.log('Switch theme');
     const root: HTMLElement | null = document.querySelector('html');
-    switchTheme(root);
+    if (root) {
+      root.dataset['theme'] =
+        root.dataset['theme'] === 'dark' ? 'light' : 'dark';
+    }
   }
 }

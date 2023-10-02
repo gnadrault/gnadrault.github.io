@@ -1,0 +1,44 @@
+.description-container {
+  font-size: var(--nexus-font-size-md);
+  display: flex;
+  gap: 2em;
+  padding-bottom: 3em;
+
+  #profil-img {
+    max-width: 20rem;
+    height: 100%;
+    box-shadow: var(--nexus-shadows-card-lg);
+    border-radius: var(--nexus-radius-card-lg);
+  }
+}
+
+.experiences-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1em;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .exp-company-logo {
+      width: max-content;
+      height: 3rem;
+    }
+
+    .exp-job-date {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .exp-duration {
+      color: #999;
+      font-size: var(--nexus-font-size-sm);
+    }
+
+    .exp-link {
+      width: fit-content;
+    }
+  }
+}
