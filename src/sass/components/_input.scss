@@ -1,0 +1,13 @@
+input,
+textarea,
+select {
+  color: var(--nexus-color-text-main);
+  padding: 8px;
+  border: none;
+  border-radius: var(--nexus-radius-card-md);
+  background-color: var(--nexus-color-input);
+}
+
+form button {
+  background-color: var(--nexus-color-button);
+}

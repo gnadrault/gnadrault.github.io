@@ -96,6 +96,9 @@ select {
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --nexus-color-outline-card: var(--nexus-color-light-blue);
   --nexus-color-scrollbar: var(--nexus-color-dark-grey-80);
+  --nexus-color-input: white;
+  --nexus-color-button: var(--nexus-color-blue-white);
+  --nexus-color-text-muted: var(--nexus-color-dark-grey-80);
   svg#sun {
     display: none;
   }
@@ -118,6 +121,9 @@ select {
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --nexus-color-outline-card: var(--nexus-color-white-80);
   --nexus-color-scrollbar: var(--nexus-color-light-blue-80);
+  --nexus-color-input: var(--nexus-color-dark-blue-light-80);
+  --nexus-color-button: var(--nexus-color-light-blue);
+  --nexus-color-text-muted: var(--nexus-color-light-blue-80);
   svg#sun {
     display: block;
   }
@@ -142,8 +148,13 @@ body.popup-open {
   overflow: hidden;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-family: var(--nexus-font-family-title);
+}
+
+h1 {
   font-size: 3em;
   margin-bottom: 2rem !important;
 }

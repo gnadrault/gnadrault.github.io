@@ -4,6 +4,10 @@
   gap: 2em;
   padding-bottom: 3em;
 
+  p {
+    padding-bottom: 1em;
+  }
+
   #profil-img {
     max-width: 20rem;
     height: 100%;
@@ -33,8 +37,7 @@
     }
 
     .exp-duration {
-      color: #999;
-      font-size: var(--nexus-font-size-sm);
+      color: var(--nexus-color-text-muted);
     }
 
     .exp-link {
