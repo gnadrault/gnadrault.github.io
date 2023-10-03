@@ -1,45 +1,40 @@
-# name: Build and Deploy
+name: Build and Deploy
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v3
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 18
-#           cache: npm
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
 
-#       - name: Install dependencies
-#         run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-#       - name: Build Angular App
-#         run: npm run build --prod
+      - name: Build Angular App
+        run: npm run build --prod
 
-#       - name: Deploy to GitHub Pages
-#         uses:
+      - name: Set up Git
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-#   publish-gpr:
-#     needs: build
-#     runs-on: ubuntu-latest
-#     permissions:
-#       packages: write
-#       contents: read
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: 18
-#           registry-url: https://npm.pkg.github.com/
-#       - run: npm ci
-#       - run: npm publish
-#         env:
-#           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Switch to the target branch
+        run: git checkout -b gh-pages
+
+      - name: Copy contents of /dist to the target branch
+        run: |
+          git checkout -b gh-pages
+          git add -f dist/*
+          git commit -m "Update /dist for gh-pages"
+          git push origin gh-pages
