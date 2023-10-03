@@ -30,7 +30,8 @@
 
 // RESPONSIVE
 @media screen and (max-width: 768px) {
-  .contact {
+  .contact,
+  .contact form {
     grid-template-columns: 1fr;
   }
 }

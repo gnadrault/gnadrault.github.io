@@ -31,10 +31,9 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
-
     .home__experience-company-logo {
-      width: max-content;
       height: 3rem;
+      width: auto;
     }
 
     .home__experience-date {
@@ -60,5 +59,12 @@
   .home__description-logo {
     width: 100%;
     align-self: center;
+  }
+}
+
+// RESPONSIVE
+@media screen and (max-width: 640px) {
+  .home__experiences {
+    grid-template-columns: 1fr;
   }
 }
