@@ -6,7 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  readonly url = 'assets/download/CV_Guillaume_NADRAULT.pdf';
+  readonly filename = 'CV_Guillaume_NADRAULT.pdf';
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  downloadCV() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', this.url);
+    link.setAttribute('download', this.filename);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
 }
