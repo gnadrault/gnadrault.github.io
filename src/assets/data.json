@@ -1,0 +1,66 @@
+{
+  "projects": [
+    {
+      "titre": "Battle Of Azure",
+      "dataTitre": "battleofazure",
+      "date": "July 2020",
+      "paragraphes": [
+        "Medieval tactical game prototype inspired by Advance Wars and Wargroove.",
+        "Passionate of game creation, I participate during 2 weeks for a Game JAM to create a game experience. It was created with the Lua language and the LÖVE2D framework."
+      ],
+      "links": [
+        {
+          "url": "https://github.com/GNadrault/BattleOfAzure",
+          "display": "View code",
+          "icon": "github.png",
+          "iconName": "github"
+        },
+        {
+          "url": "https://gnadrault.itch.io/battle-of-azure",
+          "display": "View example",
+          "icon": "itch.png",
+          "iconName": "itch.io"
+        }
+      ],
+      "skills": [{ "libelle": "Game programming", "icon": "gamepad" }],
+      "mainResource": {
+        "url": "https://www.youtube.com/embed/G7bJDyGEOZk",
+        "isVideo": true
+      },
+      "secondResources": [
+        { "url": "boa1.jpg" },
+        { "url": "boa2.jpg" },
+        { "url": "boa3.jpg" }
+      ],
+      "techs": ["lua", "love"]
+    },
+    {
+      "titre": "Starvex",
+      "dataTitre": "starvex",
+      "date": "January 2021",
+      "paragraphes": [
+        "Starvex is a top-down space game created during a GameJAM, you control a spaceship and the goal is to collect the maximum of resources in 3 minutes while dodging planets and others objects. I've learned how to manage particles effects and shaders during this project.",
+        "Created with the Lua language and the LÖVE2D framework."
+      ],
+      "links": [
+        {
+          "url": "https://gnadrault.itch.io/starvex",
+          "display": "View example",
+          "icon": "itch.png",
+          "iconName": "itch.io"
+        }
+      ],
+      "skills": [{ "libelle": "Game programming", "icon": "gamepad" }],
+      "mainResource": {
+        "url": "https://www.youtube.com/embed/9c1R0W5Iavc",
+        "isVideo": true
+      },
+      "secondResources": [
+        { "url": "starvex_1.jpg" },
+        { "url": "starvex_2.jpg" },
+        { "url": "starvex_3.jpg" }
+      ],
+      "techs": ["lua", "love"]
+    }
+  ]
+}

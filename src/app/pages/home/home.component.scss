@@ -1,22 +1,22 @@
-.description-container {
+.home__description {
   font-size: var(--nexus-font-size-md);
   display: flex;
   gap: 2em;
   padding-bottom: 3em;
 
-  p {
-    padding-bottom: 1em;
-  }
-
-  #profil-img {
+  .home__description-logo {
     max-width: 20rem;
     height: 100%;
     box-shadow: var(--nexus-shadows-card-lg);
     border-radius: var(--nexus-radius-card-lg);
   }
+
+  p {
+    padding-bottom: 1em;
+  }
 }
 
-.experiences-container {
+.home__experiences {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 1em;
@@ -26,22 +26,33 @@
     flex-direction: column;
     gap: 1em;
 
-    .exp-company-logo {
+    .home__experience-company-logo {
       width: max-content;
       height: 3rem;
     }
 
-    .exp-job-date {
+    .home__experience-date {
       display: flex;
       justify-content: space-between;
     }
 
-    .exp-duration {
+    .home__experience-duration {
       color: var(--nexus-color-text-muted);
     }
 
-    .exp-link {
+    .home__experience-link {
       width: fit-content;
     }
+  }
+}
+
+// RESPONSIVE
+@media screen and (max-width: 768px) {
+  .home__description {
+    flex-direction: column;
+  }
+  .home__description-logo {
+    width: 100%;
+    align-self: center;
   }
 }

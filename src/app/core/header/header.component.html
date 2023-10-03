@@ -32,12 +32,20 @@
       <div class="header__nav-links-lg">
         <ul>
           <li>
-            <a class="header__nav-link-lg link" [routerLink]="['/accueil']"
+            <a
+              class="header__nav-link-lg header__nav-link"
+              routerLink="/accueil"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
               >Accueil</a
             >
           </li>
           <li>
-            <a class="header__nav-link-lg link" [routerLink]="['/contact']"
+            <a
+              class="header__nav-link-lg header__nav-link"
+              routerLink="/contact"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
               >Contact</a
             >
           </li>
@@ -101,7 +109,7 @@
       <!-- BURGER MENU -->
       <div
         class="header__nav-links-burger"
-        [ngClass]="{ 'header__nav-links-burger--menu-open': isDialogOpen }"
+        [ngClass]="{ 'header__nav-links-burger--active': isMenuOpen }"
         (click)="openDialog()"
       >
         <span></span>
@@ -112,14 +120,28 @@
     </nav>
   </div>
 </header>
-<dialog id="dialog-menu" class="anim-stretch" #dialogMenu>
-  <div id="dialog-links">
+<dialog class="header__dialog-menu anim-stretch" #dialogMenu>
+  <div class="header__dialog-menu-links">
     <ul>
       <li>
-        <a class="dialog-link link" [routerLink]="['/accueil']">Accueil</a>
+        <a
+          class="header__dialog-menu-link header__nav-link"
+          routerLink="/accueil"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          (click)="openDialog()"
+          >Accueil</a
+        >
       </li>
       <li>
-        <a class="dialog-link link" [routerLink]="['/contact']">Contact</a>
+        <a
+          class="header__dialog-menu-link header__nav-link"
+          routerLink="/contact"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          (click)="openDialog()"
+          >Contact</a
+        >
       </li>
     </ul>
   </div>
