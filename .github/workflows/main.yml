@@ -24,9 +24,7 @@ jobs:
           npm run build --configuration=production --base-href=/portfolio/
 
       - name: Deploy GitHub Pages
-        if: success()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/portfolio
-          enable_jekyll: true
+          publish_dir: ./dist/portfolio
