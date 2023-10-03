@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  readonly url = 'assets/download/CV_Guillaume_NADRAULT.pdf';
-  readonly filename = 'CV_Guillaume_NADRAULT.pdf';
+  readonly url = 'assets/download/CV_Guillaume_Nadrault.pdf';
+  readonly filename = 'CV_Guillaume_Nadrault.pdf';
 
   constructor() {}
 
