@@ -8,7 +8,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { PopupComponent } from './core/popup/popup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProjectsComponent,
     HeaderComponent,
     FooterComponent,
-    PopupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

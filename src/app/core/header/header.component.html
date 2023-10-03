@@ -1,12 +1,15 @@
 <header>
-  <div class="container h-100">
-    <a class="nav-logo" [routerLink]="['/home']" routerLinkActive="active">
+  <div class="header__container container h-100">
+    <a
+      class="header__nav-logo"
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+    >
       <!-- LOGO -->
       <svg
-        id="logo"
+        class="header__nav-logo-svg"
         width="11.886mm"
         height="10.329mm"
-        version="1.1"
         viewBox="0 0 11.886 10.329"
       >
         <g transform="translate(383.25 -125.24)">
@@ -24,21 +27,25 @@
       </svg>
     </a>
 
-    <nav class="nav-links">
+    <nav class="header__nav-links">
       <!-- LINKS -->
-      <div id="nav-links-lg">
+      <div class="header__nav-links-lg">
         <ul>
           <li>
-            <a class="nav-link-lg link" [routerLink]="['/accueil']">Accueil</a>
+            <a class="header__nav-link-lg link" [routerLink]="['/accueil']"
+              >Accueil</a
+            >
           </li>
           <li>
-            <a class="nav-link-lg link" [routerLink]="['/contact']">Contact</a>
+            <a class="header__nav-link-lg link" [routerLink]="['/contact']"
+              >Contact</a
+            >
           </li>
         </ul>
       </div>
 
       <!-- SWITCH THEME  -->
-      <button id="btn-theme" (click)="switchTheme()">
+      <button class="header__nav-links-theme" (click)="switchTheme()">
         <!-- SUN -->
         <svg
           id="sun"
@@ -92,7 +99,11 @@
       </button>
 
       <!-- BURGER MENU -->
-      <div id="burger-menu">
+      <div
+        class="header__nav-links-burger"
+        [ngClass]="{ 'header__nav-links-burger--menu-open': isDialogOpen }"
+        (click)="openDialog()"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -101,3 +112,15 @@
     </nav>
   </div>
 </header>
+<dialog id="dialog-menu" class="anim-stretch" #dialogMenu>
+  <div id="dialog-links">
+    <ul>
+      <li>
+        <a class="dialog-link link" [routerLink]="['/accueil']">Accueil</a>
+      </li>
+      <li>
+        <a class="dialog-link link" [routerLink]="['/contact']">Contact</a>
+      </li>
+    </ul>
+  </div>
+</dialog>
