@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: Build app
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,14 +25,13 @@ jobs:
       - name: Build Angular App
         run: npm run build --prod
 
-      - name: Set up Git
+      - name: Deploy GitHub Pages
+        env:
+          SRC_FOLDER_PATH: "dist"
+          TARGET_BRANCH: "gh-pages"
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Copy contents of /dist to the target branch
-        run: |
-          git checkout gh-pages
-          git add -f dist/*
-          git commit -m "Update /dist for gh-pages"
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git checkout $TARGET_BRANCH
+          git add dist && git commit -m "Update dist for gh-pages"
           git push origin gh-pages
