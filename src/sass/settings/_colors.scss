@@ -7,9 +7,14 @@
   --nexus-color-dark-blue-light: rgb(30, 41, 59);
   --nexus-color-dark-blue-light-80: rgb(30, 41, 59, 0.8);
   --nexus-color-blue-white: rgb(217, 234, 247);
-  --nexus-color-gradiant-blue: linear-gradient(0deg, rgb(51, 65, 85) 0%, rgb(51, 65, 85) 100%);
+  --nexus-color-gradiant-blue: linear-gradient(
+    0deg,
+    rgb(51, 65, 85) 0%,
+    rgb(51, 65, 85) 100%
+  );
   --nexus-color-light-blue: rgb(154, 183, 203);
   --nexus-color-light-blue-80: rgb(154, 183, 203, 0.8);
   --nexus-color-dark-grey: rgb(51, 65, 85);
   --nexus-color-dark-grey-80: rgb(51, 65, 85, 0.8);
+  --nexus-color-red: rgba(255, 32, 32, 0.8);
 }

@@ -6,6 +6,21 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1em;
+
+    .contact__field {
+      display: flex;
+      flex-direction: column;
+
+      label:has(+ .ng-invalid.ng-touched),
+      label:has(+ .ng-invalid.ng-touched) {
+        color: var(--nexus-color-red);
+      }
+
+      .ng-invalid.ng-touched {
+        border: var(--nexus-color-red) 1px solid;
+      }
+    }
+
     textarea {
       resize: none;
     }
@@ -13,6 +28,10 @@
       display: flex;
       justify-content: flex-end;
       gap: 1rem;
+    }
+
+    .contact__error-message {
+      color: var(--nexus-color-red);
     }
   }
   .contact__informations {

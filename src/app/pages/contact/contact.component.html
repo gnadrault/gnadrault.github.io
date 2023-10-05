@@ -1,26 +1,36 @@
 <div class="contact">
   <form [formGroup]="contactForm" (ngSubmit)="onSubmitContact()">
     <h2>Me contacter</h2>
-    <input id="name" type="text" formControlName="name" placeholder="Nom*" />
-    <input id="name" type="text" formControlName="email" placeholder="Email*" />
-    <input
-      id="name"
-      type="text"
-      formControlName="subject"
-      placeholder="Objet*"
-    />
-    <textarea
-      id="name"
-      type="text"
-      formControlName="message"
-      placeholder="Message*"
-      cols="30"
-      rows="10"
-    ></textarea>
+    <div class="contact__field">
+      <label for="name">Nom <small>*</small></label>
+      <input id="name" type="text" formControlName="name" />
+    </div>
+    <div class="contact__field">
+      <label for="email">Email <small>*</small></label>
+      <input id="email" type="text" formControlName="email" />
+    </div>
+    <div class="contact__field">
+      <label for="subject">Objet <small>*</small></label>
+      <input id="subject" type="text" formControlName="subject" />
+    </div>
+    <div class="contact__field">
+      <label for="subject">Message <small>*</small></label>
+      <textarea
+        id="message"
+        type="text"
+        formControlName="message"
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div>
     <div class="contact__form-btn">
       <button (click)="onCancel()">Annuler ✗</button>
-      <button type="submit">Envoyer ✔︎</button>
+      <button type="submit" [disabled]="contactForm.invalid">Envoyer ✔︎</button>
     </div>
+    <p class="contact__error-message" *ngIf="errorSendEmail">
+      Une erreur est survenue lors de l'envoi du mail, veuillez réessayer plus
+      tard ou me contacter directement avec les informations.
+    </p>
   </form>
   <div class="contact__informations">
     <h2>Mes informations</h2>
