@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { finalize } from 'rxjs';
 import { EmailRequest } from 'src/app/models/email-request.model';
 import { EmailService } from 'src/app/services/email.service';
 
@@ -17,6 +18,7 @@ export class ContactComponent implements OnInit {
   });
 
   errorSendEmail: boolean = false;
+  sending: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,10 +29,12 @@ export class ContactComponent implements OnInit {
 
   onSubmitContact() {
     this.errorSendEmail = false;
+    this.sending = true;
     if (this.contactForm.valid) {
       console.log('Send email');
       this.emailService
         .sendEmail(this.createEmail(this.contactForm))
+        .pipe(finalize(() => (this.sending = false)))
         .subscribe({
           next: () => {
             console.log('Email sent successfully');

@@ -24,8 +24,10 @@
       ></textarea>
     </div>
     <div class="contact__form-btn">
-      <button (click)="onCancel()">Annuler ✗</button>
-      <button type="submit" [disabled]="contactForm.invalid">Envoyer ✔︎</button>
+      <button (click)="onCancel()" [disabled]="sending">Annuler ✗</button>
+      <button type="submit" [disabled]="contactForm.invalid || sending">
+        Envoyer ✔︎
+      </button>
     </div>
     <p class="contact__error-message" *ngIf="errorSendEmail">
       Une erreur est survenue lors de l'envoi du mail, veuillez réessayer plus
